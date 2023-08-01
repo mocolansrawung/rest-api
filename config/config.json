@@ -1,0 +1,8 @@
+{
+    "Database": {
+        "DBName": "movie.db"
+    },
+    "Server": {
+        "Port": ":8080"
+    }
+}

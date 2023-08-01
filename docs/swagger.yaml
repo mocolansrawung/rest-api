@@ -1,0 +1,157 @@
+definitions:
+  model.Movie:
+    properties:
+      description:
+        type: string
+      genre:
+        type: string
+      id:
+        type: string
+      imageUrl:
+        type: string
+      title:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/movies:
+    get:
+      description: Get a list of movies
+      parameters:
+      - description: Genre of the movie
+        in: query
+        name: genre
+        type: string
+      - description: Sort movies by field
+        in: query
+        name: sort
+        type: string
+      - description: Order of sorting
+        in: query
+        name: order
+        type: string
+      - default: 10
+        description: Limit the number of movies
+        in: query
+        name: limit
+        type: integer
+      - default: 0
+        description: Page number for movies list
+        in: query
+        name: page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Movie'
+            type: array
+      summary: Get movies
+      tags:
+      - movies
+    post:
+      consumes:
+      - application/json
+      description: Create a new movie with the input payload
+      parameters:
+      - description: Create movie
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/model.Movie'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Movie'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Create a new movie
+      tags:
+      - movies
+  /v1/movies/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a movie by its ID
+      parameters:
+      - description: ID of the movie to delete
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successfully deleted movie
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Delete a movie
+      tags:
+      - movies
+    put:
+      consumes:
+      - application/json
+      description: Update an existing movie with the input payload
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Update movie
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/model.Movie'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Movie'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Update an existing movie
+      tags:
+      - movies
+swagger: "2.0"

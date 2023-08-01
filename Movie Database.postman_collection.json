@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "752a52bd-ddab-454a-8969-3eec38ba8f3d",
+		"name": "Movie Database",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23114612"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "movies",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Update an existing movie",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/movies/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"movies",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>"
+												}
+											]
+										},
+										"description": "Update an existing movie with the input payload"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/movies/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"movies",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/movies/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"movies",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"ut_0_0\": -66016983,\n  \"ut1\": \"adipisicing\",\n  \"laboris3\": -61631077.559498996\n}"
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/movies/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"movies",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"ut_0_0\": -66016983,\n  \"ut1\": \"adipisicing\",\n  \"laboris3\": -61631077.559498996\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete a movie",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/movies/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"movies",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Delete a movie by its ID"
+									},
+									"response": [
+										{
+											"name": "Successfully deleted movie",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/movies/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"movies",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"ut_0_0\": -66016983,\n  \"ut1\": \"adipisicing\",\n  \"laboris3\": -61631077.559498996\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/movies/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"movies",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"velit_d0\": \"<string>\",\n  \"consequat7\": \"<string>\"\n}"
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/movies/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"movies",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"velit_d0\": \"<string>\",\n  \"consequat7\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get movies",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/movies?genre=<string>&sort=<string>&order=<string>&limit=10&page=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "genre",
+											"value": "<string>",
+											"description": "Genre of the movie"
+										},
+										{
+											"key": "sort",
+											"value": "<string>",
+											"description": "Sort movies by field"
+										},
+										{
+											"key": "order",
+											"value": "<string>",
+											"description": "Order of sorting"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Limit the number of movies"
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "Page number for movies list"
+										}
+									]
+								},
+								"description": "Get a list of movies"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/movies?genre=<string>&sort=<string>&order=<string>&limit=10&page=0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"movies"
+											],
+											"query": [
+												{
+													"key": "genre",
+													"value": "<string>",
+													"description": "Genre of the movie"
+												},
+												{
+													"key": "sort",
+													"value": "<string>",
+													"description": "Sort movies by field"
+												},
+												{
+													"key": "order",
+													"value": "<string>",
+													"description": "Order of sorting"
+												},
+												{
+													"key": "limit",
+													"value": "10",
+													"description": "Limit the number of movies"
+												},
+												{
+													"key": "page",
+													"value": "0",
+													"description": "Page number for movies list"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"description\": \"<string>\",\n    \"genre\": \"<string>\",\n    \"id\": \"<string>\",\n    \"imageUrl\": \"<string>\",\n    \"title\": \"<string>\"\n  },\n  {\n    \"description\": \"<string>\",\n    \"genre\": \"<string>\",\n    \"id\": \"<string>\",\n    \"imageUrl\": \"<string>\",\n    \"title\": \"<string>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new movie",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/movies",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"movies"
+									]
+								},
+								"description": "Create a new movie with the input payload"
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/movies",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"movies"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/movies",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"movies"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"ut_0_0\": -66016983,\n  \"ut1\": \"adipisicing\",\n  \"laboris3\": -61631077.559498996\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"genre\": \"<string>\",\n  \"id\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/movies",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"movies"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"ut_0_0\": -66016983,\n  \"ut1\": \"adipisicing\",\n  \"laboris3\": -61631077.559498996\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
