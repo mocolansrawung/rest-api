@@ -26,6 +26,9 @@ func StartServer(port string, handler *handler.MovieHandler) {
 		MaxAge:           300,
 	}))
 
+	// Executed middleware for the whole routing
+	r.Use(middleware.CustomMiddleware)
+
 	docs.SwaggerInfo.Title = "Movie Database"
 	docs.SwaggerInfo.Version = "v1"
 	conf := httpSwagger.URL("http://localhost:8080/swagger/doc.json")
