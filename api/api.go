@@ -16,7 +16,7 @@ import (
 func StartServer(port string, handler *handler.MovieHandler) {
 	r := chi.NewRouter()
 	r.Use(chiMiddleware.Logger)
-	r.Use(middleware.MockAuthMiddleware)
+	// r.Use(middleware.MockAuthMiddleware)
 	r.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"https://*", "http://*"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
@@ -26,7 +26,7 @@ func StartServer(port string, handler *handler.MovieHandler) {
 		MaxAge:           300,
 	}))
 
-	// Executed middleware for the whole routing
+	// Custom middleware implementation
 	r.Use(middleware.CustomMiddleware)
 
 	docs.SwaggerInfo.Title = "Movie Database"
@@ -34,7 +34,11 @@ func StartServer(port string, handler *handler.MovieHandler) {
 	conf := httpSwagger.URL("http://localhost:8080/swagger/doc.json")
 	r.Get("/swagger/*", httpSwagger.Handler(conf))
 
+	// Login endpoint for JWT Auth testing
+	r.Post("/login", handler.Login)
+
 	r.Route("/v1/", func(r chi.Router) {
+		r.Use(middleware.JWTAuthMiddleware)
 		r.Post("/movies", handler.CreateMovie)
 		r.Get("/movies", handler.GetMovies)
 		r.Route("/movies/{id}", func(r chi.Router) {

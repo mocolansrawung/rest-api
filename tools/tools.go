@@ -2,7 +2,6 @@ package tools
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -12,7 +11,6 @@ import (
 func ConvertIdParamsToInt(idStr string) (int, error) {
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
-		fmt.Println("Error during conversion")
 		return 0, err
 	}
 
